@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Ideas from "../Ideas/Ideas";
-import Form from "../Form/Form";
+import Ideas from "../../containers/Ideas";
+import Form from "../../containers/Form";
 import "./App.css";
 
 class App extends Component {
