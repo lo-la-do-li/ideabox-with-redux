@@ -21,10 +21,11 @@ button {
   display: inline-block;
   margin-left: 10px;
   width: 120px;
+  border:1px solid lightslategray;
   border-radius: 10px;
   box-shadow: 1px 1px 45px #AAF;
   background-color: #a9a9e9;
-  color: rgb(60, 47, 47);
+  color: rgb(34, 27, 27);
   text-transform: uppercase;
   font-size: large;
   font-weight: bold
@@ -34,4 +35,5 @@ button:hover {
   color: rgb(240, 112, 112);
   background-color:rgb(60, 49, 49);
   cursor: pointer;
+   -webkit-text-emphasis: sesame;
 }

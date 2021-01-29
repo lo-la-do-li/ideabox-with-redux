@@ -22,6 +22,9 @@ export const ideas = (state = initialIdeas, action) => {
           description: action.idea.description,
         },
       ];
+    case "DELETE_IDEA": {
+      return state.filter((idea) => idea.id !== action.id);
+    }
     default:
       return state;
   }

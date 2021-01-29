@@ -11,7 +11,6 @@ const Ideas = ({ ideas }) => {
         description={idea.description}
         id={idea.id}
         key={idea.id}
-        // deleteIdea={props.deleteIdea}
       />
     );
   });

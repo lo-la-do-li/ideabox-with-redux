@@ -6,10 +6,16 @@
 }
 
 .card-title {
-  -webkit-text-emphasis: sesame;
   font-size: 22px;
 }
 
 .card-description {
   font-size: 18px;
+}
+
+.delete-btn {
+  background-color: rgb(233, 203, 196);
+  width: 60px;
+  border-radius: 3px;
+  box-shadow: none;
 }
