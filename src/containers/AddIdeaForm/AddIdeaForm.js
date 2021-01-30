@@ -1,59 +1,57 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { addIdea } from "../../actions";
 import { connect } from "react-redux";
 import "./Form.css";
 
-class AddIdeaForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "",
-      description: "",
-    };
-  }
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+const AddIdeaForm = (props) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleChange = (event) => {
+    event.target.name === "title"
+      ? setTitle(event.target.value)
+      : setDescription(event.target.value);
   };
 
-  submitIdea = (event) => {
+  const submitIdea = (event) => {
     event.preventDefault();
     const newIdea = {
       id: Date.now(),
-      ...this.state,
+      title,
+      description,
     };
-    this.props.addIdea(newIdea);
-    this.clearInputs();
+    props.addIdea(newIdea);
+    clearInputs();
   };
 
-  clearInputs = () => {
-    this.setState({ title: "", description: "" });
+  const clearInputs = () => {
+    setTitle("");
+    setDescription("");
   };
-  render() {
-    return (
-      <div className="add-idea-form">
-        <form>
-          <input
-            type="text"
-            placeholder="Title"
-            name="title"
-            value={this.state.title}
-            onChange={(event) => this.handleChange(event)}
-          />
-          <input
-            type="text"
-            placeholder="Description"
-            name="description"
-            value={this.state.description}
-            onChange={(event) => this.handleChange(event)}
-          />
-          <span>
-            <button onClick={this.submitIdea}>Submit</button>
-          </span>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="add-idea-form">
+      <form>
+        <input
+          type="text"
+          placeholder="Title"
+          name="title"
+          value={title}
+          onChange={(event) => handleChange(event)}
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          name="description"
+          value={description}
+          onChange={(event) => handleChange(event)}
+        />
+        <span>
+          <button onClick={submitIdea}>Submit</button>
+        </span>
+      </form>
+    </div>
+  );
+};
 const mapDispatchToProps = (dispatch) => ({
   addIdea: (newIdea) => dispatch(addIdea(newIdea)),
 });
