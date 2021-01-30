@@ -2,12 +2,12 @@ const initialIdeas = [
   {
     id: 1,
     title: "Kitten Mittens",
-    description: "Because they're smitten",
+    description: "You'll be smitten",
   },
   {
     id: 2,
     title: "use-global-hook",
-    description: "Because Redux kind of sux...",
+    description: "Because it's easier than redux...",
   },
 ];
 

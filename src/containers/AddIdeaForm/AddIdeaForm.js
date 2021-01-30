@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { addIdea } from "../actions";
+import { addIdea } from "../../actions";
 import { connect } from "react-redux";
 import "./Form.css";
 
