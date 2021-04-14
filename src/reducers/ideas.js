@@ -7,7 +7,7 @@ const initialIdeas = [
   {
     id: 2,
     title: "use-global-hook",
-    description: "Because it's easier than redux...",
+    description: "Because it's like simplified redux for smaller apps",
   },
 ];
 
